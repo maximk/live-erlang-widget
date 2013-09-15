@@ -9,7 +9,7 @@ The purpose of the Live Erlang widget is to help people to try Erlang with
 minimum effort. With the widget, web-based Erlang training can be made more
 interactive.
 
-# How to use
+## How to use
 
 First add to your webpage a div that has 'live-erlang' class:
 
@@ -26,11 +26,7 @@ script right before the end of the document body:
 
 This is it.
 
-# Widget in action
-
-See [i.erlangonxen.org].
-
-# How to customize
+## How to customize
 
 The widget can use different images for each console. The image type is specified
 using the data-image attribute:
@@ -40,3 +36,8 @@ using the data-image attribute:
 The only image type avaiable today is 'standard'. If you need a custom image,
 which, for instance, contains specific modules or files, please, contact us at
 info@erlangonxen.org.
+
+## Widget in action
+
+See [i.erlangonxen.org](http://i.erlangonxen.org).
+
