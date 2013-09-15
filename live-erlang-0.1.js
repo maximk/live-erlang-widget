@@ -8,7 +8,7 @@
 		erl.style.overflow = 'auto';
 
 		erl.innerHTML = '<div>[Powered by '+
-				'<a href="http://github.com/maximk/live-erlang-widget">'+
+				'<a href="http://erlangonxen.org">'+
 					'Erlang on Xen</a>]</div>';
 
 		var cursor = document.createElement('div');
