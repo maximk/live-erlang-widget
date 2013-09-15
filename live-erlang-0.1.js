@@ -4,8 +4,11 @@
 	var prepare_window = function(erl) {
 		if (erl.tabIndex == -1)
 			erl.tabIndex = 0;
+
+		erl.style.overflow = 'auto';
+
 		erl.innerHTML = '<div>[Powered by '+
-				'<a href="http://erlangonxen.org/blog/live-erlang-widget">'+
+				'<a href="http://github.com/maximk/live-erlang-widget">'+
 					'Erlang on Xen</a>]</div>';
 
 		var cursor = document.createElement('div');
