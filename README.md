@@ -1,23 +1,23 @@
 
-# A Live Erlang widget
+# Live Erlang widget
 
 The widget adds a live Erlang console to your webiste. The console connects
 to a virtual Erlang on Xen instance. A new instance gets created upon each
 web page load. Instance are destroyed immediately when the web page closes.
 
 The purpose of the Live Erlang widget is to help people to try Erlang with
-minimum effort. With the widget web-based Erlang training can be made more
+minimum effort. With the widget, web-based Erlang training can be made more
 interactive.
 
 # How to use
 
-The first step is to add a div to your webpage that has 'live-erlang' class:
+First add to your webpage a div that has 'live-erlang' class:
 
 	...
 	<div class="live-erlang"></div>
 	...
 
-You can size and style the div the way you want. The add the live-erlang
+You can size and style the div the way you want. Now add the live-erlang
 script right before the end of the document body:
 
 		...
@@ -25,6 +25,10 @@ script right before the end of the document body:
 	</body>
 
 This is it.
+
+# Widget in action
+
+See [i.erlangonxen.org].
 
 # How to customize
 
