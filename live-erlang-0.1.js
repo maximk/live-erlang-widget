@@ -75,8 +75,9 @@
 				if (param == 0)
 					return;
 				var leftNode = cursor.previousSibling;
-				if (leftNode.nodeType != Node.TEXT_NODE
-						|| leftNode.nodeValue.length < param)
+				if (leftNode.nodeType != Node.TEXT_NODE)
+					return; // autocompletion
+				if (param > leftNode.nodeValue.length)
 					bad_escape(selector, param);
 				var aaa = leftNode.nodeValue.substr(0, leftNode.nodeValue.length-param);
 				var bbb = leftNode.nodeValue.substr(-param);
@@ -99,7 +100,9 @@
 				if (param == 0)
 					return;
 				var rightNode = cursor.nextSibling;
-				if (rightNode == null || rightNode.nodeType != Node.TEXT_NODE
+				if (rightNode == null)
+					return; // autocompletion
+				if (rightNode.nodeType != Node.TEXT_NODE
 						|| rightNode.nodeValue.length < param)
 					bad_escape(selector, param);
 				var bbb = rightNode.nodeValue.substr(param);
@@ -167,10 +170,13 @@
 			} else if (ev.which == 40) {	// down
 				web_sock.send('\x1b[B');
 				ev.preventDefault();
-			} else if (ev.which == 8) {
+			} else if (ev.which == 8) {		// Backspace
 				web_sock.send('\x08');
 				ev.preventDefault();
-			} else if (ev.which == 71 && ev.ctrlKey) {
+			} else if (ev.which == 9) {		// Tab
+				web_sock.send('\x09');
+				ev.preventDefault();
+			} else if (ev.which == 71 && ev.ctrlKey) {	// ^G
 				web_sock.send('\x07');
 				ev.preventDefault();
 			}
