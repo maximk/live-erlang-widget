@@ -43,6 +43,8 @@
 		};
 
 		var text_insert = function(str) {
+			if (str == '')
+				return;
 			var node = cursor.nextSibling;
 			if (node == null) {
 				node = document.createTextNode(str);
