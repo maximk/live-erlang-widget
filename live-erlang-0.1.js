@@ -72,6 +72,9 @@
 				if (param != 4)
 					bad_escape(selector, param);
 				// leave insert mode - ignore
+			} else if (selector == 'm') {
+				console.log('Formatting ESC sequence ignored: ^[' +param +selector);
+				//TODO
 			} else if (selector == 'D') {
 				//console.log('LEFT '+param);
 				if (param == 0)
@@ -215,6 +218,18 @@
 		}
 		else
 		{
+			web_sock.onopen = function(ev) {
+				if (erl.dataset.shell != undefined) {
+					// Switch to an alternative shell:
+					// ^G
+					// s 'Elixir-IEx'
+					// c
+					web_sock.send('\x07');
+					web_sock.send('s \'' +erl.dataset.shell +'\'\n');
+					web_sock.send('c\n');
+				}
+			};
+
 			web_sock.onmessage = function(ev) {
 				for (var i = 0; i < ev.data.length; i++) {
 					//console.log('RECEIVE '+ev.data.charCodeAt(i));
