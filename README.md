@@ -1,4 +1,3 @@
-
 # Live Erlang widget
 
 The widget adds a live Erlang console to your webiste. The console connects
@@ -35,11 +34,16 @@ using the data-image attribute:
 
 	<div class="live-erlang" data-image="standard"></div>
 
-The only image type avaiable today is 'standard'. If you need a custom image,
+Two image types are recognised now: 'standard' and 'elixir'. If you need a custom image,
 which, for instance, contains specific modules or files, please, contact us at
 info@erlangonxen.org.
 
+Additionally, the console may automatically switch to a custom shell. This
+is particularly useful for an Elixir shell. Use 'data-shell' attribute to select
+a custom shell, e.g.
+
+	<div class="live-erlang" data-image="elixir" data-shell="Elixir-IEx"></div>
+
 ## Widget in action
 
-See [i.erlangonxen.org](http://i.erlangonxen.org).
-
+See [i.erlangonxen.org](http://i.erlangonxen.org) and [x.erlangonxen.org](http://x.erlangonxen.org).
